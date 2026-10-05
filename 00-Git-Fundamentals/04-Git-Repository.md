@@ -18,23 +18,21 @@ MyProject/
 
 The important distinction is:
 
-Working Tree
+Working Tree [The working tree contains the files you work on.]
     │
     │ stage changes
     ▼
-Staging Area
+Staging Area [The staging area represents what you intend to include in the next commit.]
     │
     │ commit
     ▼
-Git Repository
+Git Repository [The repository stores Git's history, objects, references, and metadata.]
 
-The working tree contains the files you work on.
+```
 
-The staging area represents what you intend to include in the next commit.
+---
 
-The repository stores Git's history, objects, references, and metadata.
-
-What Is Stored in .git?
+# What Is Stored in .git?
 
 You do not need to memorize every file inside .git. Understand the major components:
 
@@ -54,6 +52,7 @@ Git Repository vs Project Folder
 
 A project folder and a Git repository are related, but they are not the same thing.
 
+```text
 Project Folder
 │
 ├── README.md
@@ -81,7 +80,10 @@ Detailed object behavior is covered separately in:
 
 07-Git-Objects.md
 
-References
+```
+---
+
+# References
 
 Git uses references to identify important objects.
 
@@ -92,6 +94,7 @@ Tag
 HEAD
 Remote-tracking branch
 
+```text
 For example:
 
 main ──► Commit C ──► Commit B ──► Commit A
@@ -114,8 +117,12 @@ Local Repository
        ▼
 Remote Repository
 
-The local and remote repositories maintain their own states.
+```
+---
 
+# The local and remote repositories maintain their own states.
+
+```text
 For example:
 
 Local:  main → Commit D
@@ -133,7 +140,9 @@ Diverged branches
 
 These topics are covered later in the Handbook.
 
-Repository State
+```
+---
+# Repository State
 
 A repository can be in many different states:
 
@@ -157,6 +166,7 @@ First ask:
 
 "What state is the repository currently in?"
 
+```text
 This is the foundation of the Handbook's troubleshooting approach:
 
 Symptom
@@ -170,6 +180,8 @@ Root Cause
 Remediation
    ↓
 Verification
+```
+
 Repository Mental Model
 
 Keep this simple model in mind:
@@ -188,40 +200,36 @@ Keep this simple model in mind:
           ├── Trees
           └── Blobs
 
-And the everyday workflow:
+---
 
-Working Tree
-      │
-      │ git add
-      ▼
-Staging Area
-      │
-      │ git commit
-      ▼
-Repository
-Troubleshooting Checklist
+# When something unexpected happens, establish the repository context first:
 
-When something unexpected happens, establish the repository context first:
+```text
+  Which repository am I in?
+  What is the current branch?
+  Where is HEAD pointing?
+  Are there working-tree changes?
+  Are changes staged?
+  What is the recent history?
+  Is a remote involved?
+  Is the repository ahead, behind or diverged?
 
-Which repository am I in?
-What is the current branch?
-Where is HEAD pointing?
-Are there working-tree changes?
-Are changes staged?
-What is the recent history?
-Is a remote involved?
-Is the repository ahead, behind or diverged?
+```
+---
 
-Only then decide what action to take.
+# Only then decide what action to take.
 
-Key Takeaways
-A Git repository stores project history and Git metadata.
-.git contains the repository's internal data.
-The working tree, staging area and repository represent different states.
-Git stores history using objects such as commits, trees and blobs.
-Branches and tags are references to Git objects.
-Local and remote repositories can have different states.
-Repository state should be understood before taking corrective action.
-.git should not be modified or deleted casually.
+```text
+  Key Takeaways:
 
-Understand the repository state before changing it.
+  A Git repository stores project history and Git metadata.
+  .git contains the repository's internal data.
+  The working tree, staging area and repository represent different states.
+  Git stores history using objects such as commits, trees and blobs.
+  Branches and tags are references to Git objects.
+  Local and remote repositories can have different states.
+  Repository state should be understood before taking corrective action.
+  .git should not be modified or deleted casually.
+  Understand the repository state before changing it.
+
+```
